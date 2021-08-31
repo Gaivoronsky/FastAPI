@@ -2,11 +2,12 @@ from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
-    server_host: str = '127.0.0.1'
-    server_port: int = 8000
+    server_host: str = '0.0.0.0'
+    server_port: int = 80
     database_url: str = 'sqlite:///./database.sqlite3'
 
-    jwt_secret: str
+
+    jwt_secret: str = 'secret'
     jwt_algorithm: str = 'HS256'
     jwt_expiration: int = 3600
 
